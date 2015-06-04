@@ -31,3 +31,8 @@ require('fs').readFile( process.argv[2], function( err, json ) {
         process.exit( 1 );
     }
 });
+
+process.on('uncaughtException', function( e ) {
+    console.log('Uncaught exception');
+    console.log( e );
+});
