@@ -16,7 +16,7 @@ require('fs').readFile( process.argv[2], function( err, json ) {
             // Parse settings
             var settings = JSON.parse( json );
             // Start server
-            require('./lib/httpapi').start( settings );
+            require('./lib/http').start( settings );
             console.log('semocs started');
         }
     }
