@@ -1,5 +1,5 @@
 {
-    "name":"semo-content-server",
+    "name":"semocs",
     "private":false,
     "version":"0.0.1",
     "dependencies": {
