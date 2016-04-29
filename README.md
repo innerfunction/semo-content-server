@@ -47,7 +47,7 @@ The params you can use in the query are:
 * password: Your Git password.
 * feed: Your repository name.
 
-The service uses the 'git clone' command with a url like https://username:password@github.com/username/feed.git.
+The service uses the 'git clone' command with HTTP and a URL indicating the Git user/pass, like: https://username:password@github.com/username/feed.git.
 
 The repos are stores in the local file system under /settings.repoDir/{username}/{feed}
 
@@ -78,12 +78,18 @@ That returns a json with the URL to download the zip file with all your repo con
 
 Example: http://localhost:8079/?username=testuser&feed=semo-jekyll-demo&apiver=2.0
 
-
-
-
-
 ----
-http://localhost:8079/clone/?username=jloriente&password=anu2Taiwe&feed=jloriente-site
 
 TODO:
-* The service clone the project from GitHub. We could also host our Git server.
+
+* Add accounts: Semo accounts.
+* Add repos: Every account has a number of repos:
+   * Repo type: Git, GitHub, Dropbox. Used to know how to pull/clone...
+   * Repo URL: a URL to the server.
+   * Repo feed.
+   * Access details: username/pass to clone that repo.
+* Add support for Git, not just GitHub:
+    * File system could be like /serverURL/account/repo
+* Add jekyll build. Build repo into an /output. Serve in separate ZIP file.
+* We could also host our Git server.
+    * Service crates repos in a Git server. e.g. Clone a initial sample project.
