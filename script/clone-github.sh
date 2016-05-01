@@ -1,5 +1,6 @@
 #!/bin/bash
-# Usage clone-github user pass repo
+
+# Usage "clone-github USER PASS REPONAME"
 
 # GET http://localhost:8079/clone/?username=jloriente&password=anu2Taiwe&feed=jloriente-site'
 
