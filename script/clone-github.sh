@@ -19,7 +19,7 @@ FEED=$3
 
 URL="http://$SERVER:$PORT/clone/?username=$USERNAME&password=$PASSWORD&feed=$FEED"
 
-echo "GET $URL"
+echo "GET $URL\n"
 
 curl -X GET $URL
 

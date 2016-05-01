@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage: get-content.sh username feed
+# usage: get-content.sh server username feed
 
 SERVER="localhost"
 PORT="8079"
@@ -9,10 +9,11 @@ FEED="jloriente-site"
 USERNAME="jloriente" #git username
 
 # read from args
-USERNAME=$1
-FEED=$2
+GITSERVER=$1
+USERNAME=$2
+FEED=$3
 
-URL="http://$SERVER:$PORT/?username=$USERNAME&feed=$FEED&apiver=$APIVER"
+URL="http://$SERVER:$PORT/?server=$GITSERVER&username=$USERNAME&feed=$FEED&apiver=$APIVER"
 
 echo "GET $URL"
 

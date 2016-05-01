@@ -15,13 +15,14 @@ PASSWORD="**"
 
 # read from args
 GITSERVER=$1
-USERNAME=$2
-PASSWORD=$3
-FEED=$4
+GITPORT=$2
+USERNAME=$3
+PASSWORD=$4
+FEED=$5
 
-URL="http://$SERVER:$PORT/clone/?server=$GITSERVER&username=$USERNAME&password=$PASSWORD&feed=$FEED"
+URL="http://$SERVER:$PORT/clone/?server=$GITSERVER&port=$GITPORT&username=$USERNAME&password=$PASSWORD&feed=$FEED"
 
-echo "GET $URL"
+echo "GET $URL\n"
 
 curl -X GET $URL
 
