@@ -1,16 +1,12 @@
 #!/bin/bash
 
-# Usage "clone-github USER PASS FEED"
+# Usage "clone-github GITUSER PASS FEED"
 
 # GET http://localhost:8079/clone/?username=jloriente&password=anu2Taiwe&feed=jloriente-site'
 
 # The local service 
 SERVER="localhost"
 PORT="8079"
-
-FEED="jloriente-site"
-USERNAME="jloriente" #git username
-PASSWORD="**"
 
 # read from args
 USERNAME=$1
@@ -19,7 +15,7 @@ FEED=$3
 
 URL="http://$SERVER:$PORT/clone/?username=$USERNAME&password=$PASSWORD&feed=$FEED"
 
-echo -e "CLONE: $URL\n"
+echo -e "CLONE (GITHUB): $URL\n"
 
 curl -X GET $URL
 

@@ -1,5 +1,5 @@
 #!/bin/bash
-# usage: get-content.sh server username feed since
+# usage: get-content.sh SERVER FEED SINCE
 
 SERVER="localhost"
 PORT="8079"

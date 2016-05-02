@@ -1,4 +1,4 @@
 #!/bin/bash
-#rm -rf reposDir
+rm -rf reposDir
 rm -rf packages
-semocs settings.json
+semocs settings.json 

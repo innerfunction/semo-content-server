@@ -13,7 +13,7 @@ Create a settings.json configuration file for the service:
 
 ~~~ json
 {
-    "repoDir":      "repos",                   
+    "repoDir":      "repoDir",                   
     "packageDir":   "packages",             
     "zipBaseURL":   "http://localhost/",    
     "port":         8079
@@ -27,7 +27,6 @@ To run the service just use the semocs command with a settings file.
 ~~~
 $ semocs settings.json
 ~~~
-
 
 ## How it works
 
@@ -77,6 +76,38 @@ That returns a json with the URL to download the zip file with all your repo con
 ~~~
 
 Example: http://localhost:8079/?username=testuser&feed=semo-jekyll-demo&apiver=2.0
+
+
+# Development Scripts
+
+To create an initial number of repos in the system just run the next command
+passing your git username/pass. That clone the initial "semo-jekyll-demo" repo.
+
+~~~~
+./script/create-jekyll-repos.sh USERNAME PASSWORD
+~~~~
+
+There are a few scripts to help you to manage and test the system API, next
+script do HTTP requests to the API with curl.
+
+### Clone
+~~~
+./script/clone-github USER PASS FEED
+./script/clone SERVER USER PASS FEED
+
+Examples:
+./script/clone.sh git.innerfunction.com 22222 jloriente **** jloriente/semo-jekyll-demo
+~~~
+
+### Get
+
+~~~
+./script/get-content.sh SERVER FEED SINCE
+
+Examples:
+./script/get.sh github.com innerfunction/semo-jekyll-site
+./script/get.sh github.com innerfunction/semo-jekyll-site
+~~~
 
 ----
 
