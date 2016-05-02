@@ -10,7 +10,7 @@ var Commands = {
     'CloneGit':                 "git clone http://{username}:{password}@{server}/{feed}.git .",
     'CurrentCommit':            "git log --pretty=format:%h -n 1",
     'ListUpdatesSinceCommit':   "git diff --name-status {ref} {current}",
-    'ZipFilesInCommit':         "git archive -o {zipPath} {ref}",
+    'ZipFilesInCommit':         "git archive -o {zipPath} {ref} {files}",
     'ListFilesInCommit':        "git show --pretty=format: --name-only {commit}",
     'ListTrackedFilesAtCommit': "git ls-tree -r --name-status {commit}",
     'AddFileToZip':             "zip {zipPath} -j {file}",
@@ -186,10 +186,10 @@ function packageCurrent( repoDir, packageDir ) {
         .then(function() {
             args.ref = args.current;
             // Create a zip file containing all content files.
-            //'ZipFilesInCommit':         "git archive -o {zipPath} {ref} {files} {subfolder}",
-            // Log.debug( "ref = %s", args.ref)
-            // args.files = "output"
-            // Log.debug( "files = %s", args.ref)
+            //'ZipFilesInCommit':         "git archive -o {zipPath} {ref} {files}",
+            Log.debug( "ref = %s", args.ref)
+            args.files = "output"
+            Log.debug( "files = %s", args.ref)
             return exec( repoDir, 'ZipFilesInCommit', args );
         })
         .then(function() {

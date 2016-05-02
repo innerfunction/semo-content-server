@@ -1,0 +1,6 @@
+{
+    "repoDir":      "reposDir",
+    "packageDir":   "packages",
+    "zipBaseURL":   "http://localhost/",
+    "port":         8079
+}

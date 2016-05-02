@@ -19,11 +19,9 @@ FEED=$3
 
 URL="http://$SERVER:$PORT/clone/?username=$USERNAME&password=$PASSWORD&feed=$FEED"
 
-echo -e "CLONE: $URL\n"
+echo "GET $URL\n"
 
 curl -X GET $URL
-
-echo -e "\n"
 
 # JSON PARAMS
 #curl -i -H "Accept: application/json" "s$SERVER:5050/a/c/getName{"param0":"pradeep"}" 

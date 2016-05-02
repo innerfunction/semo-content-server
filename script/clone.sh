@@ -22,9 +22,11 @@ FEED=$5
 
 URL="http://$SERVER:$PORT/clone/?server=$GITSERVER&port=$GITPORT&username=$USERNAME&password=$PASSWORD&feed=$FEED"
 
-echo "GET $URL\n"
+echo -e "CLONE: $URL\n"
 
 curl -X GET $URL
+
+echo -e "\n"
 
 # JSON PARAMS
 #curl -i -H "Accept: application/json" "s$SERVER:5050/a/c/getName{"param0":"pradeep"}" 

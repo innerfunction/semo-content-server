@@ -1,0 +1,38 @@
+#!/usr/bin/env node
+
+// Check arguments
+if( process.argv.length < 3 ) {
+    console.log('Usage: semocs <settings file>');
+    process.exit( 1 );
+}
+
+// Attempt to load settings
+require('fs').readFile( process.argv[2], function( err, json ) {
+    try {
+        if( err ) {
+            throw err;
+        }
+        else {
+            // Parse settings
+            var settings = JSON.parse( json );
+            // Start server
+            require('./lib/http').start( settings );
+            console.log('semocs started');
+        }
+    }
+    catch( e ) {
+        switch( e.code ) {
+        case 'ENOENT':
+            console.log('Settings file not found:', e.path );
+            break;
+        default:
+            console.log( e );
+        }
+        process.exit( 1 );
+    }
+});
+
+process.on('uncaughtException', function( e ) {
+    console.log('Uncaught exception');
+    console.log( e );
+});

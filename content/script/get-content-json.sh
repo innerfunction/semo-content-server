@@ -6,17 +6,17 @@ PORT="8079"
 APIVER="2.0"
 
 FEED="jloriente-site"
+USERNAME="jloriente" #git username
 
 # read from args
 GITSERVER=$1
-FEED=$2
+USERNAME=$2
+FEED=$3
 
-URL="http://$SERVER:$PORT/?server=$GITSERVER&feed=$FEED&apiver=$APIVER"
+URL="http://$SERVER:$PORT/?server=$GITSERVER&username=$USERNAME&feed=$FEED&apiver=$APIVER"
 
-echo -e "GET $URL \n"
+echo "GET $URL"
 
 curl -X GET $URL
-
-echo -e "\n"
 
 

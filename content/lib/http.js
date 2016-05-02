@@ -33,15 +33,10 @@ function sendJSON( res, data, status ) {
 
 // Return the path to a repo in the file system
 // At the moment use: server/feed
-// e.g. reposDir/github.com/jloriente/innerfunction/
+// e.g. github.com/jloriente/innerfunction/
 // We avoid the username for now
 function resolveRepoFilePath( dir, server, feed ){
     return mods.path.join( dir, server, feed );
-}
-
-// /packages/github.com/jloriente/innerfunction
-function resolveRepoDirPath( packageDir, server, feed ){
-    return mods.path.join( packageDir, server, feed );
 }
 
 // Return the public URL for a content zip file.
@@ -192,7 +187,7 @@ function start( settings ) {
                 }
                 var since = req.param('since');
                 var repoDir = resolveRepoFilePath( settings.repoDir, server, feed );
-                var packageDir = resolveRepoDirPath( settings.packageDir, server, feed );
+                var packageDir = mods.path.join( settings.packageDir, feed );
                 Log.debug('/ feed=%s since=%s repoDir=%s packageDir=%s', feed, since, repoDir, packageDir );
                 if( !since ) {
                     return returnCurrentContent( repoDir, packageDir, settings, res, feed );
