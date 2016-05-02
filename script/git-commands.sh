@@ -9,5 +9,5 @@ echo -e "COMMIT: $COMMIT \n"
 echo -e "ARCHIVE: $COMMIT \n"
 git archive -o content.zip -v $COMMIT
 
-echo -e "SHOW: $COMMIT\n"
+echo -e "\nSHOW: $COMMIT\n"
 git show --pretty=format: --name-only $COMMIT
