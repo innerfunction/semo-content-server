@@ -1,8 +1,5 @@
 #!/bin/bash
 
-USERNAME=$1
-PASS=$2
-
 # get current
 ./script/get.sh github.com innerfunction/semo-jekyll-demo 
 # get since
